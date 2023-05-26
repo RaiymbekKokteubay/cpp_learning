@@ -155,6 +155,97 @@ int FindingRowsWZero(int n,int m){
     }
 }
 
+//Practice task 8.1
+int FindingPercentageUsingPointer(int n, int m){
+    int *pointer1 = &n;
+    int *pointer2 = &m;
+    cout<<(*pointer1*100)/(*pointer2);
+}
+
+//Practice task 9.1
+int ConvertingSequence(char* p){
+    while(*p != '\0'){
+        if(int(*p)>64 && int(*p)<91){
+            cout<<char(int(*p)+32);
+        }
+        else if(int(*p)>96 && int(*p)<123){
+            cout<<char(int(*p)-32);
+        }
+        else{
+            cout<<char(int(*p));
+        }
+        p++;
+    }
+}
+
+int ReplacingWord(const char* p, const char* word1, char* word2){
+    cout<<p<<endl;
+    cout<<word1<<endl;
+    cout<<word2<<endl;
+//    int len_counter = 0;
+//    for(int i = 0;i<1000;i++){
+//        if(*word1[i]=='\0'){
+//            len_counter=i-1;
+//        }
+//    }
+//    int sentence_len = 0;
+//    for(int i = 0;i<1000;i++){
+//        if(*p[i]=='\0'){
+//            sentence_len=i-1;
+//        }
+//    }
+//    int lpointer = 0;
+//    int rpointer = 0;
+//    int counter = 0;
+//    for(int i = 0; i<1000;i++){
+//        for(int j = 0; j<len_counter;j++){
+//            if(*p[i+j]==*word1[j]){
+//                rpointer = i+j;
+//            }
+//            else{
+//                rpointer=0;
+//            }
+//        }
+//    }
+//    lpointer = rpointer - len_counter + 1;
+//    int point = 0;
+//    while(point<sentence_len){
+//        if(point == lpointer){
+//            for(int i = 0; i<1000;i++){
+//                cout<<word2[i];
+//            }
+//            point+=len_counter-1;
+//        }
+//        else{
+//            cout<<*p[point];
+//        }
+//    }
+}
+
+class NameOfClass{
+    public:
+        string name;
+        string surname;
+        string cause_of_death;
+        int timer;
+    NameOfClass(string name, string surname, string cause_of_death, int timer){
+        this->name = name;
+        this->surname = surname;
+        this->cause_of_death = cause_of_death;
+        this->timer = timer;
+    }
+    void WritingDeathNote() {
+        if (cause_of_death == "") {
+            cause_of_death = "gemoroi";
+        }
+        if (timer == 0) {
+            timer = 40;
+        }
+        cout << name << " " << surname << " died out of " << cause_of_death << " " << timer<< " seconds after writing victim into the DeathNote" << endl;
+        cout << "Жаль конечно  этого добряка. Хороший был человек((.";
+    }
+};
+
 int main(){
 //    practicetask1();
 //    practicetask2();
@@ -180,5 +271,18 @@ int main(){
 //    CountingLetter();
 //    DeletingIntsB4Min(5);
 //    SumNonZeroRows(3, 3);
-    FindingRowsWZero(3,3);
+//    FindingRowsWZero(3,3);
+//    FindingPercentageUsingPointer(3,6);
+//    char p[100];
+//    cin.getline(p,100);
+//    ConvertingSequence(p);
+//    char p[100];
+//    cin.getline(p,100);
+//    char word1[100];
+//    cin.getline(p,100);
+//    char word2[100];
+//    cin.getline(p,100);
+//    ReplacingWord(p, word1, word2);
+    NameOfClass v1("Sagi", "Alenov", "daylight", 1);
+    v1.WritingDeathNote();
 }
